@@ -1,0 +1,37 @@
+# Core Python libraries
+pandas==2.2.1
+numpy==1.26.0
+
+# Database interaction
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9  # For PostgreSQL (or use pymysql for MySQL)
+
+# LLM integration (OpenAI or similar)
+openai==1.10.0
+langchain==0.1.13
+
+# Web framework (choose one)
+fastapi==0.110.0
+uvicorn==0.29.0  # ASGI server for FastAPI
+
+# Optional: Flask alternative
+# flask==3.0.3
+
+# Caching / Task queues (if used)
+redis==5.0.1
+celery==5.3.6
+
+# For environment variable management
+python-dotenv==1.0.1
+
+# For API requests
+httpx==0.27.0
+requests==2.31.0
+
+# Optional: Vector DBs or embeddings
+faiss-cpu==1.8.0
+sentence-transformers==2.6.1
+
+# Optional: Frontend integration
+jinja2==3.1.3
+
