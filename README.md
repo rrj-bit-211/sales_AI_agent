@@ -1,6 +1,6 @@
 # AI SQL Sales Query Assistant
 
-Lightweight Streamlit app that converts natural-language sales queries into SQL, runs them against a Supabase/Postgres database, and returns results (with CSV download). The app uses a configurable LLM for SQL generation.
+Lightweight Streamlit app that converts natural-language sales queries into SQL, runs them against a Supabase/Postgres database, and returns results (with CSV download). The app uses a configurable LL[...]
 
 ## Features
 - Natural-language → SQL generation
@@ -96,6 +96,24 @@ sales_AI_agent/
 └── ...                   # Other files or folders as needed
 ```
 
+## Short Demo Video
+
+A short demo video showing how the website works is available below.  
+Watch to see how to enter queries, run searches, and download results.
+
+<!-- Replace the URL with your own video link -->
+[![Demo Video](https://img.youtube.com/vi/gZ1QNFsOgGI/0.jpg)](https://www.youtube.com/watch?v=gZ1QNFsOgGI"Website Demo")
+
+Alternatively, you can embed the video directly:
+
+```markdown
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="Website Demo" frameborder="0" allowfullscreen></iframe>
+```
+
+*(Update `VIDEO_ID` and URL once your demo is available on YouTube or another platform.)*
+
+---
+
 ## Troubleshooting
 - DB connection error: confirm `DATABASE_URL` / Supabase credentials and network access.
 - LLM errors: confirm `GEMINI_API_KEY` and rate limits.
@@ -115,3 +133,5 @@ Usage, modification, and distribution may be subject to additional conditions or
 Contact the repository owner for details about specific usage permissions.
 
 If you require a more permissive or fully open-source license, please open an issue for discussion.
+
+```
