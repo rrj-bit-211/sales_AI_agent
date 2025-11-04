@@ -1,6 +1,6 @@
 # AI SQL Sales Query Assistant
 
-Lightweight Streamlit app that converts natural-language sales queries into SQL, runs them against a Supabase/Postgres database, and returns results (with CSV download). The app uses a configurable LLM connector (Gemini API key in this repo) and an SQL agent to generate and execute queries.
+Lightweight Streamlit app that converts natural-language sales queries into SQL, runs them against a Supabase/Postgres database, and returns results (with CSV download). The app uses a configurable LLM for SQL generation.
 
 ## Features
 - Natural-language → SQL generation
@@ -47,11 +47,54 @@ Open the provided localhost URL in your browser.
 - Click "Run Query".
 - The app shows the generated SQL, results table, and a "Download Results (CSV)" button.
 
-## Project layout
-- app_trigger.py — Streamlit entrypoint (active document)
-- config/conf.py — Configuration loader (env keys and helpers)
-- db/ai_sql_agent.py — AISQLAgent that generates SQL and executes queries
-- requirements.txt — Python dependencies (if present)
+## Architecture
+
+Here’s a high-level architectural diagram for the AI SQL Sales Query Assistant:
+
+```
++------------------------+
+|   Streamlit Frontend   |
+| (app_trigger.py)       |
++-----------+------------+
+            |
+            v
++------------------------+
+|   AISQLAgent Module    |
+| (db/ai_sql_agent.py)   |
++-----------+------------+
+            |
+            v
++------------------------+
+|   LLM API (Gemini)     |<----> Environment/Config (config/conf.py)
++-----------+------------+
+            |
+            v
++------------------------+
+|   Database Layer       |
+| (Supabase/Postgres)    |
++------------------------+
+```
+
+- **Streamlit Frontend:** Entry point for user queries and displays results.
+- **AISQLAgent:** Handles translation of natural language to SQL and executes queries.
+- **LLM API (Gemini):** External model for generating SQL.
+- **Config Loader:** Loads environment/configuration variables.
+- **Database Layer:** Executes generated SQL on the database.
+
+## Folder Structure
+
+```
+sales_AI_agent/
+├── app_trigger.py        # Streamlit entrypoint (active document)
+├── config/
+│   └── conf.py           # Configuration loader (env keys and helpers)
+├── db/
+│   └── ai_sql_agent.py   # AISQLAgent that generates SQL and executes queries
+├── requirements.txt      # Python dependencies (if present)
+├── .env                  # Environment variables (not tracked in git)
+├── README.md             # Project documentation
+└── ...                   # Other files or folders as needed
+```
 
 ## Troubleshooting
 - DB connection error: confirm `DATABASE_URL` / Supabase credentials and network access.
@@ -66,4 +109,9 @@ Open the provided localhost URL in your browser.
 - Open issues or submit PRs. Keep changes minimal and include tests where appropriate.
 
 ## License
-Add a LICENSE file or change this section to reflect your chosen license.
+
+This project is licensed under a proprietary or restricted-use license.  
+Usage, modification, and distribution may be subject to additional conditions or limitations set by the author.  
+Contact the repository owner for details about specific usage permissions.
+
+If you require a more permissive or fully open-source license, please open an issue for discussion.
