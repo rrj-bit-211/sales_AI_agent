@@ -1,6 +1,9 @@
 # AI SQL Sales Query Assistant
 
-Lightweight Streamlit app that converts natural-language sales queries into SQL, runs them against a Supabase/Postgres database, and returns results (with CSV download). The app uses a configurable LL[...]
+Lightweight Streamlit app that converts natural-language sales queries into SQL, runs them against a Supabase/Postgres database, and returns results (with CSV download). The app uses a configurable LLM for SQL generation.
+
+**Dataset Used:**  
+This project utilizes the [Fast Delivery Agent Reviews Analysis & Prediction dataset](https://www.kaggle.com/code/devraai/fast-delivery-agent-reviews-analysis-prediction) from Kaggle. The dataset contains reviews, ratings, and relevant fields about delivery agents, enabling the app to demonstrate natural language to SQL conversion and analytics on real-world data. Before running the app, ensure you have imported the dataset in your Supabase/Postgres database and updated connection details as described below.
 
 ## Features
 - Natural-language → SQL generation
@@ -102,15 +105,7 @@ A short demo video showing how the website works is available below.
 Watch to see how to enter queries, run searches, and download results.
 
 <!-- Replace the URL with your own video link -->
-[![Demo Video](https://img.youtube.com/vi/gZ1QNFsOgGI/0.jpg)](https://www.youtube.com/watch?v=gZ1QNFsOgGI"Website Demo")
-
-Alternatively, you can embed the video directly:
-
-```markdown
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="Website Demo" frameborder="0" allowfullscreen></iframe>
-```
-
-*(Update `VIDEO_ID` and URL once your demo is available on YouTube or another platform.)*
+[![Demo Video](https://img.youtube.com/vi/gZ1QNFsOgGI/0.jpg)](https://www.youtube.com/watch?v=gZ1QNFsOgGI "Website Demo")
 
 ---
 
@@ -134,4 +129,10 @@ Contact the repository owner for details about specific usage permissions.
 
 If you require a more permissive or fully open-source license, please open an issue for discussion.
 
-```
+## Future Scope
+
+This application can be deployed on any cloud service, such as AWS, Azure, Google Cloud, or other major platforms, to enhance accessibility, scalability, and reliability. Cloud deployment will enable centralized management, support multiple users, and allow seamless integration with enterprise databases. Leveraging cloud infrastructure also improves security, availability, and facilitates automated scaling to meet demand.
+
+## References
+
+- [Fast Delivery Agent Reviews Analysis & Prediction Dataset](https://www.kaggle.com/code/devraai/fast-delivery-agent-reviews-analysis-prediction) — used as the primary data source for this project.
